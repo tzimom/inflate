@@ -84,7 +84,7 @@ fn main() {
     let args = CliArgs::parse();
     let mut simulation = Simulation::from(&args);
 
-    println!("t,balance,daily_budget");
+    println!("balance,daily_budget");
 
     loop {
         if args.duration.map_or(false, |limit| simulation.time >= limit) {
@@ -96,10 +96,6 @@ fn main() {
         }
 
         simulation.simulate_step();
-
-        println!(
-            "{},{},{}",
-            simulation.time, simulation.state.balance, simulation.state.daily_budget
-        );
+        println!("{},{}", simulation.state.balance, simulation.state.daily_budget);
     }
 }

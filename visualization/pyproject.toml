@@ -1,0 +1,9 @@
+[project]
+name = "visual"
+version = "0.1.0"
+description = "Visualisation tool for tzimom/inflate"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.2",
+]
